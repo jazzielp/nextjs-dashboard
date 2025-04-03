@@ -1,7 +1,15 @@
-import type { NextConfig } from 'next';
+const path = require("path");
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Otras configuraciones...
+  experimental: {
+    turbo: {
+      resolveAlias: {
+        "@": path.resolve(__dirname),
+      },
+    },
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
